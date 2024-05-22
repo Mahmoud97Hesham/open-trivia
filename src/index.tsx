@@ -1,11 +1,13 @@
-import React, { StrictMode } from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider } from 'react-redux';
+import { ThemeProvider } from '@mui/material/styles';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store';
+import theme from './theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as Element);
 const queryClient = new QueryClient();
@@ -14,9 +16,11 @@ root.render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <Router>
-        <Provider store={store}>
-          <App />
-        </Provider>
+        <ThemeProvider theme={theme}>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </ThemeProvider>
       </Router>
     </QueryClientProvider>
   </StrictMode>

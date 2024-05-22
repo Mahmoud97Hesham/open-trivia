@@ -22,7 +22,7 @@ export const colors: PaletteOptions = {
     100: '#e8e8e8',
     300: '#d9d9d9',
     500: '#b6b6b6',
-    700: '#b6b6b6'
+    700: '#9C9C9C'
   },
   warning: {
     20: '#FFFAEB',

@@ -1,9 +1,9 @@
-import { Button } from '@mui/material';
+import Button from 'components/Button';
 
 function App() {
   return (
     <div className='App'>
-      <Button>hello</Button>
+      <Button layout='primary' buttonSize='sm' title='hello' />
     </div>
   );
 }

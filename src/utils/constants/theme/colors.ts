@@ -5,7 +5,7 @@ export const colors: PaletteOptions = {
     25: '#FFFFFF',
     30: '#F9FCFF',
     50: '#F9F9F9',
-    100: '#F2F4F7',
+    100: '#F2F2F2',
     200: '#EAECF0',
     300: '#D0D5DD',
     medium: '#CCCCCC',

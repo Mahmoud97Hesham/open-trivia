@@ -1,9 +1,9 @@
-import Button from 'components/Button';
+import TextField from 'components/TextField';
 
 function App() {
   return (
     <div className='App'>
-      <Button layout='primary' buttonSize='sm' title='hello' />
+      <TextField />
     </div>
   );
 }

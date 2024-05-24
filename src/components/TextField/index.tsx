@@ -1,8 +1,8 @@
-import { BaseTextFieldProps } from '@mui/material';
+import { StandardTextFieldProps } from '@mui/material';
 import React from 'react';
 import { StyledTextField } from 'styledComponents/TextField';
 
-const TextField = ({ ...rest }: BaseTextFieldProps) => {
+const TextField = ({ ...rest }: StandardTextFieldProps) => {
   return <StyledTextField {...rest} />;
 };
 

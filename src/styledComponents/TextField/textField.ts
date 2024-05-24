@@ -8,10 +8,10 @@ export const StyledTextField = styled(TextField)<BaseTextFieldProps>(
     border: '1px solid black',
     width: '25.625rem',
     height: '6.875rem',
-    padding: '0.625rem 0.875rem',
+    padding: '0 2rem',
     backgroundColor: theme.palette.grey[100],
     '.MuiInputBase-root': {
-      height: '5.5rem'
+      height: '100%'
     },
     '.MuiOutlinedInput-notchedOutline': {
       border: 'none'

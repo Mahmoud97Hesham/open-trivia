@@ -1,3 +1,4 @@
 export enum pathnames {
-  HOME = '/home'
+  HOME = '/home',
+  CATEGORIES = '/categories'
 }

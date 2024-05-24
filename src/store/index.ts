@@ -2,9 +2,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import userReducer from './user/user.slice';
 import gameSettingsReducer from './gameSettings/gameSettings.slice';
+import gameDetailsReducer from './gameDetails/gameDetails.slice';
 
 const store = configureStore({
-  reducer: { user: userReducer, gameSettings: gameSettingsReducer }
+  reducer: {
+    user: userReducer,
+    gameSettings: gameSettingsReducer,
+    gameDetails: gameDetailsReducer
+  }
 });
 
 export type RootState = ReturnType<typeof store.getState>;

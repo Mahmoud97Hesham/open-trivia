@@ -3,7 +3,10 @@ import Button from 'components/Button';
 import CustomModal from 'components/Modal';
 import TextField from 'components/TextField';
 import { ChangeEvent, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { pathnames } from 'routes/pathnames';
 import { useAppDispatch, useAppSelector } from 'store';
+import { resetgameDetails } from 'store/gameDetails/gameDetails.slice';
 import {
   setDifficulty,
   resetGameSettings
@@ -13,6 +16,7 @@ import { difficulty } from 'utils/constants';
 
 const Home = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const currentDifficulty = useAppSelector(
     state => state.gameSettings.difficulty
@@ -23,6 +27,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(resetGameSettings());
     dispatch(resetUserName());
+    dispatch(resetgameDetails());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -43,6 +48,7 @@ const Home = () => {
   const onPlay = () => {
     if (name && currentDifficulty) {
       dispatch(setUserName(name));
+      navigate(pathnames.CATEGORIES);
     } else {
       setOpen(true);
     }

@@ -8,3 +8,7 @@ export enum difficulty {
   MEDIUM = 'medium',
   HARD = 'hard'
 }
+
+export const QUERIES = Object.freeze({
+  LOAD_CATEGORIES: 'LOAD_CATEGORIES'
+});

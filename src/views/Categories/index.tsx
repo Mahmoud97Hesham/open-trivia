@@ -27,11 +27,10 @@ const Categories = () => {
 
   const [open, setOpen] = useState(false);
 
-  if (!user.name) {
-    navigate(pathnames.HOME);
-  }
-
   useEffect(() => {
+    if (!user.name) {
+      navigate(pathnames.HOME);
+    }
     dispatch(resetCurrentCategory());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -70,7 +69,7 @@ const Categories = () => {
 
   const onStart = () => {
     if (currentCategory.name) {
-      //TODO
+      navigate(pathnames.QUESTIONS);
     } else {
       setOpen(true);
     }

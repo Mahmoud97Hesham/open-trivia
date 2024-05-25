@@ -10,5 +10,12 @@ export enum difficulty {
 }
 
 export const QUERIES = Object.freeze({
-  LOAD_CATEGORIES: 'LOAD_CATEGORIES'
+  LOAD_CATEGORIES: 'LOAD_CATEGORIES',
+  LOAD_QUESTIONS: 'LOAD_QUESTIONS'
 });
+
+export const timerValues = {
+  [difficulty.EASY]: 90,
+  [difficulty.MEDIUM]: 60,
+  [difficulty.HARD]: 30
+};

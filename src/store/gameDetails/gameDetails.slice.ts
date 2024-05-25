@@ -1,7 +1,10 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IChosenCategory } from 'interfaces/views/categories';
+import {
+  IChosenCategory,
+  IAnsweredCategory
+} from 'interfaces/views/categories';
 
-interface IChosenCategoryPayload {
+interface IAnsweredCategoryPayload {
   counts: {
     correctCount: number;
     incorrectCount: number;
@@ -22,18 +25,28 @@ const gameDetailsSlice = createSlice({
       id: -1,
       name: ''
     },
+    answeredCategories: {},
     chosenCategories: {},
     correctCount: 0,
     incorrectCount: 0,
-    skippedCount: 0
+    skippedCount: 0,
+    roundCount: 1,
+    timer: 0
   },
   reducers: {
     setCurrentCategory(state, action: PayloadAction<ICurrentCategory>) {
       state.currentCategory = action.payload;
     },
-    setChosenCategories(state, action: PayloadAction<IChosenCategoryPayload>) {
-      (state.chosenCategories as IChosenCategory)[action.payload.categoryName] =
-        action.payload.counts;
+    setChosenCategories(state, action: PayloadAction<string>) {
+      (state.chosenCategories as IChosenCategory)[action.payload] = true;
+    },
+    setAnsweredCategories(
+      state,
+      action: PayloadAction<IAnsweredCategoryPayload>
+    ) {
+      (state.answeredCategories as IAnsweredCategory)[
+        action.payload.categoryName
+      ] = action.payload.counts;
     },
     setCorrectCount(state, action: PayloadAction<number>) {
       state.correctCount = action.payload;
@@ -43,6 +56,12 @@ const gameDetailsSlice = createSlice({
     },
     setSkippedCount(state, action: PayloadAction<number>) {
       state.skippedCount = action.payload;
+    },
+    setRoundCount(state, action: PayloadAction<number>) {
+      state.roundCount = action.payload;
+    },
+    setTimer(state, action: PayloadAction<number>) {
+      state.timer = action.payload;
     },
     resetCurrentCategory(state) {
       return {
@@ -59,10 +78,13 @@ const gameDetailsSlice = createSlice({
           id: -1,
           name: ''
         },
+        answeredCategories: {},
         chosenCategories: {},
         correctCount: 0,
         incorrectCount: 0,
-        skippedCount: 0
+        skippedCount: 0,
+        roundCount: 1,
+        timer: 0
       };
     }
   }
@@ -71,9 +93,12 @@ const gameDetailsSlice = createSlice({
 export const {
   setCurrentCategory,
   setChosenCategories,
+  setAnsweredCategories,
   setCorrectCount,
   setIncorrectCount,
   setSkippedCount,
+  setRoundCount,
+  setTimer,
   resetgameDetails,
   resetCurrentCategory
 } = gameDetailsSlice.actions;

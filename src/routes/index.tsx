@@ -6,5 +6,6 @@ export const routes: IRoute[] = [
   { path: pathnames.HOME, element: <LazyComponent.Home /> },
   { path: pathnames.CATEGORIES, element: <LazyComponent.Categories /> },
   { path: pathnames.QUESTIONS, element: <LazyComponent.Questions /> },
+  { path: pathnames.STATISTICS, element: <LazyComponent.Statistics /> },
   { path: '/*', element: <LazyComponent.Home /> }
 ];

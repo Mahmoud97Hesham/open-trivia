@@ -101,7 +101,7 @@ const Questions = () => {
       currentCategory.id !== 0 &&
         dispatch(setChosenCategories(currentCategory.name));
       if (gameDetails.roundCount >= gameSettings.roundsNo) {
-        //TODO
+        navigate(pathnames.STATISTICS);
       } else {
         dispatch(setRoundCount(gameDetails.roundCount + 1));
         navigate(pathnames.CATEGORIES);

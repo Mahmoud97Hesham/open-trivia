@@ -20,3 +20,7 @@ export function decodeHtml(html: string) {
   txt.innerHTML = html;
   return txt.value;
 }
+
+export const capitalizeFirstLetter = (string: string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
